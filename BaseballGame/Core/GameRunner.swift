@@ -12,12 +12,21 @@ func run() {
     let hitter = Hitter()
     let scoreBoard = ScoreBoard()
     let gameProgress = GameProgress(hitter: hitter, scoreBoard: scoreBoard, isOvered: false)
+    output(.gameStart)
+    output(.firstHitter)
+    output(.empty)
     recursivelyRun(gameProgress)
 }
 
-private func recursivelyRun(_ progress: GameProgress) {
+private func recursivelyRun(hitterState: HitterState = hitterState(),
+                            _ progress: GameProgress) {
     guard !progress.isOvered else {
+        output(.finalScore(scoreboard: progress.scoreBoard))
+        output(.gameOver)
         return
     }
-    // Process
+    let processedProgress = process(hitterState: hitterState, progress: progress)
+    output(.currentProgress(progress: processedProgress))
+    output(.empty)
+    recursivelyRun(processedProgress)
 }
