@@ -15,6 +15,7 @@
 		FC182E0A23968AF800AA47DB /* Hitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0923968AF800AA47DB /* Hitter.swift */; };
 		FC182E0C23968B0500AA47DB /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0B23968B0500AA47DB /* ScoreBoard.swift */; };
 		FC182E0E23968B1C00AA47DB /* GameProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0D23968B1C00AA47DB /* GameProgress.swift */; };
+		FC182E102396915000AA47DB /* HitterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0F2396915000AA47DB /* HitterState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		FC182E0923968AF800AA47DB /* Hitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hitter.swift; sourceTree = "<group>"; };
 		FC182E0B23968B0500AA47DB /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		FC182E0D23968B1C00AA47DB /* GameProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgress.swift; sourceTree = "<group>"; };
+		FC182E0F2396915000AA47DB /* HitterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitterState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FC182E0923968AF800AA47DB /* Hitter.swift */,
+				FC182E0F2396915000AA47DB /* HitterState.swift */,
 				FC182E0B23968B0500AA47DB /* ScoreBoard.swift */,
 				FC182E0D23968B1C00AA47DB /* GameProgress.swift */,
 			);
@@ -161,6 +164,7 @@
 				FC182E0723968A8A00AA47DB /* GameOutput.swift in Sources */,
 				FC182DF72396898E00AA47DB /* main.swift in Sources */,
 				FC182E0A23968AF800AA47DB /* Hitter.swift in Sources */,
+				FC182E102396915000AA47DB /* HitterState.swift in Sources */,
 				FC182E0E23968B1C00AA47DB /* GameProgress.swift in Sources */,
 				FC182E0C23968B0500AA47DB /* ScoreBoard.swift in Sources */,
 				FC182E0123968A5200AA47DB /* GameRunner.swift in Sources */,
