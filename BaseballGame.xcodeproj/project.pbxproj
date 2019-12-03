@@ -12,6 +12,9 @@
 		FC182E0323968A5D00AA47DB /* GameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0223968A5D00AA47DB /* GameInput.swift */; };
 		FC182E0523968A8000AA47DB /* GameProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0423968A8000AA47DB /* GameProcessor.swift */; };
 		FC182E0723968A8A00AA47DB /* GameOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0623968A8A00AA47DB /* GameOutput.swift */; };
+		FC182E0A23968AF800AA47DB /* Hitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0923968AF800AA47DB /* Hitter.swift */; };
+		FC182E0C23968B0500AA47DB /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0B23968B0500AA47DB /* ScoreBoard.swift */; };
+		FC182E0E23968B1C00AA47DB /* GameProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0D23968B1C00AA47DB /* GameProgress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +36,9 @@
 		FC182E0223968A5D00AA47DB /* GameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInput.swift; sourceTree = "<group>"; };
 		FC182E0423968A8000AA47DB /* GameProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessor.swift; sourceTree = "<group>"; };
 		FC182E0623968A8A00AA47DB /* GameOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOutput.swift; sourceTree = "<group>"; };
+		FC182E0923968AF800AA47DB /* Hitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hitter.swift; sourceTree = "<group>"; };
+		FC182E0B23968B0500AA47DB /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
+		FC182E0D23968B1C00AA47DB /* GameProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +80,23 @@
 		FC182DFD239689E700AA47DB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FC182E0823968AED00AA47DB /* Model */,
 				FC182E0023968A5200AA47DB /* GameRunner.swift */,
 				FC182E0223968A5D00AA47DB /* GameInput.swift */,
 				FC182E0423968A8000AA47DB /* GameProcessor.swift */,
 				FC182E0623968A8A00AA47DB /* GameOutput.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		FC182E0823968AED00AA47DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC182E0923968AF800AA47DB /* Hitter.swift */,
+				FC182E0B23968B0500AA47DB /* ScoreBoard.swift */,
+				FC182E0D23968B1C00AA47DB /* GameProgress.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +160,9 @@
 				FC182E0523968A8000AA47DB /* GameProcessor.swift in Sources */,
 				FC182E0723968A8A00AA47DB /* GameOutput.swift in Sources */,
 				FC182DF72396898E00AA47DB /* main.swift in Sources */,
+				FC182E0A23968AF800AA47DB /* Hitter.swift in Sources */,
+				FC182E0E23968B1C00AA47DB /* GameProgress.swift in Sources */,
+				FC182E0C23968B0500AA47DB /* ScoreBoard.swift in Sources */,
 				FC182E0123968A5200AA47DB /* GameRunner.swift in Sources */,
 				FC182E0323968A5D00AA47DB /* GameInput.swift in Sources */,
 			);
