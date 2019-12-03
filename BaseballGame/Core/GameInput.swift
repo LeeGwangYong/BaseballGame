@@ -8,6 +8,6 @@
 
 import Foundation
 
-func input() {
-    
+func hitterState() -> HitterState {
+    return HitterState.allCases.randomElement() ?? .strike
 }
