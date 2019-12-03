@@ -1,5 +1,5 @@
 //
-//  HitterState.swift
+//  Team.swift
 //  BaseballGame
 //
 //  Created by 이광용 on 2019/12/03.
@@ -8,11 +8,9 @@
 
 import Foundation
 
-enum HitterState: Int, CaseIterable {
+struct Team {
 
-    case hit
-    case strike
-    case ball
-    case out
-    
+    let name: String
+    let members: [Member]
+
 }
