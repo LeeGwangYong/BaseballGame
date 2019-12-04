@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AttackOrder: CustomStringConvertible {
+enum AttackOrder: CaseIterable, CustomStringConvertible {
 
     case top
     case bottom
