@@ -10,11 +10,11 @@ import Foundation
 
 struct ScoreBoard {
 
-    let hit: UInt
-    let out: UInt
+    let hit: Int
+    let out: Int
 
-    init(hit: UInt = 0,
-         out: UInt = 0) {
+    init(hit: Int = 0,
+         out: Int = 0) {
         self.hit = hit
         self.out = out
     }

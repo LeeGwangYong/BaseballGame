@@ -10,11 +10,11 @@ import Foundation
 
 struct Hitter {
 
-    let strike: UInt
-    let ball: UInt
+    let strike: Int
+    let ball: Int
 
-    init(strike: UInt = 0,
-         ball: UInt = 0) {
+    init(strike: Int = 0,
+         ball: Int = 0) {
         self.strike = strike
         self.ball = ball
     }
