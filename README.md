@@ -5,176 +5,75 @@
 - [Game Runner](#Game\ Runner)
   - [Input](#Input)
   - [Processor](#Processor)
-  - [Output](#Output)
 
 ## Game Runner
 
 ```swift
 // 최초 구동에 대한 책임을지니고 있다.
-func run() {
-    let hitter = Hitter()
-    let scoreBoard = ScoreBoard()
-    let gameProgress = GameProgress(hitter: hitter, scoreBoard: scoreBoard, isOvered: false)
-    output(.gameStart)
-    output(.firstHitter)
-    output(.empty)
-    recursivelyRun(gameProgress)
-}
+func gameStart() throws
 ```
 
 ```swift
 // 실질적인 게임의 구동에 대한 책임을 지고 있다.
-// Input(`hitterState`)를 받아, Processor(`process`)를 진행한다.
-private func recursivelyRun(hitterState: HitterState = hitterState(),
-                            _ progress: GameProgress) {
-    guard !progress.isOvered else {
-      	// 3 아웃이 될 경우 전체 안타수를 출력하고 경기가 종료된다.
-        output(.finalScore(scoreboard: progress.scoreBoard))
-        output(.gameOver)
-        return
-    }
-    let processedProgress = process(hitterState: hitterState, progress: progress)
-    output(.currentProgress(progress: processedProgress))
-    output(.empty)
-    recursivelyRun(processedProgress)
-}
+private func run(teams: [Team]) throws
 ```
 
 ## Input
 
 ```swift
-// "경기가 진행되면 랜덤하게 스트라이크 / 볼 / 안타 / 아웃 네 가지"의 책임을 가지고 있다.
-func hitterState() -> HitterState {
-    return HitterState.allCases.randomElement() ?? .strike
-}
+// Member의 hitAverage의 분포에 따라 추출된 난수를, HitterState로 반환한다.
+// -안타: h, 0.1 < h < 0.5
+// -스트라이크: (1 - h) / 2 - 0.05
+// -볼: (1 - h) / 2 - 0.05
+// -아웃: 0.1
+func hitterState(of member: Member) throws -> HitterState
 ```
 
 ## Processor
 
 ```swift
-// `hitterState`에 따라 게임 진행 상황을 업데이트하는 책임을 가지고 있다.
-func process(hitterState: HitterState, progress: GameProgress) -> GameProgress {
-    switch hitterState {
-    case .hit:
-        output(types: [.hit, .nextHitter])
-        return hitted(progress)
-    case .ball:
-        output(.ball)
-        return balled(progress)
-    case .strike:
-        output(.strike)
-        return striked(progress)
-    }
-}
+// Round와 초 / 말 진행 상황을 업데이트하는 책임을 가지고 있다.
+// 최종적으로 각 팀에 대한 진행 상황을 반환한다.
+func process(about round: Int,
+             topTeam: Team, topProgress: GameProgress,
+             bottomTeam: Team, bottomProgress: GameProgress) throws 
+-> (GameProgress, GameProgress)
+```
+
+```swift
+// Team의 진행 상황에 대한 책임을 지니고 있다.
+// 다음 맴버(타자)를 결정하며, 맴버(타자)에 대하여 수행하도록 한다.
+private func process(about team: Team, progress: GameProgress) throws -> GameProgress
+```
+
+```swift
+// Member의 진행상황에 대한 책임을 지니고 있다.
+// hitterState(of:)를 이용하여 현재 Member의 state를 생성하며,
+// 게임을 진행시킨다.
+private func process(about member: Member, progress: GameProgress) throws -> GameProgress
+```
+
+```swift
+// HitterState에 대하여 알맞은 처리가 이루어질 수 있도록 한다.
+private func process(hitterState: HitterState, progress: GameProgress) -> GameProgress
 ```
 
 ```swift
 // 안타의 처리에 대한 책임을 지니고 있다.
-private func hitted(_ progress: GameProgress) -> GameProgress {
-	  // 다음 타자의 차례에서 현재의 안타, 아웃 카운트는 유지되고, 스트라이크와 볼 카운트는 초기화된다.
-    return GameProgress(hitter: Hitter(),
-                        scoreBoard: ScoreBoard(hit: progress.scoreBoard.hit + 1,
-                                               out: progress.scoreBoard.out),
-                        isOvered: progress.isOvered)
-}
+private func hitted(_ progress: GameProgress) -> GameProgress
 ```
 
 ```swift
-private let maximumBall = 4
 // 볼의 처리에 대한 책임을 지니고 있다.
-private func balled(_ progress: GameProgress) -> GameProgress {
-    let hitter = Hitter(strike: progress.hitter.strike,
-                        ball: progress.hitter.ball + 1)
-  	// 볼이 4회 누적되면 1 안타가 된다.
-    return hitter.ball >= maximumBall ?
-        process(hitterState: .hit, progress: progress) : GameProgress(hitter: hitter, scoreBoard: progress.scoreBoard, isOvered: progress.isOvered)
-}
-
+private func balled(_ progress: GameProgress) -> GameProgress
 ```
 
 ```swift
-private let maximumStrike = 3
-private let maximumOut = 3
-private func striked(_ progress: GameProgress) -> GameProgress {
-    let hitter = Hitter(strike: progress.hitter.strike + 1,
-                        ball: progress.hitter.ball)
-		// 스트라이크가 3회 누적되면 1 아웃이다.
-    if hitter.strike >= maximumStrike {
-        let scoreBoard = ScoreBoard(hit: progress.scoreBoard.hit, out: progress.scoreBoard.out + 1)
-        let isGameOvered = scoreBoard.out >= maximumOut
-        isGameOvered ? output(.out) : output(types: [.out, .nextHitter])
-      	// 다음 타자의 차례에서 현재의 안타, 아웃 카운트는 유지되고, 스트라이크와 볼 카운트는 초기화된다.
-        return GameProgress(hitter: Hitter(),
-                            scoreBoard: scoreBoard,
-                            isOvered: isGameOvered)
-    } else {
-        return GameProgress(hitter: hitter,
-                            scoreBoard: progress.scoreBoard,
-                            isOvered: progress.isOvered)
-    }
-}
-
+// 스트라이크의 처리에 대한 책임을 지니고 있다.
+private func striked(_ progress: GameProgress) -> GameProgress
 ```
-
-
-
-## Output
 
 ```swift
-enum OutputType: CustomStringConvertible {
-    case gameStart
-    case gameOver
-
-    case firstHitter
-    case nextHitter
-
-    case hit
-    case ball
-    case strike
-    case out
-
-    case currentProgress(progress: GameProgress)
-    case finalScore(scoreboard: ScoreBoard)
-
-    case empty
-
-    var description: String {
-        switch self {
-        case .gameStart:
-            return "신나는 야구 게임!"
-        case .gameOver:
-            return "GAME OVER"
-        case .firstHitter:
-            return "첫 번째 타자가 타석에 입장했습니다."
-        case .nextHitter:
-            return "다음 타자가 타석에 입장했습니다."
-        case .hit:
-            return "안타!"
-        case .ball:
-            return "볼!"
-        case .strike:
-            return "스트라이크!"
-        case .out:
-            return "아웃!"
-        case .currentProgress(let progress):
-            return "\(progress.hitter.strike)S, \(progress.hitter.ball)B, \(progress.scoreBoard.out)O"
-        case .finalScore(let scoreboard):
-            return "최종 안타수: \(scoreboard.hit)"
-        case .empty:
-            return ""
-        }
-    }
-}
-
-// Output을 단일로 출력하는 책임을 가지고 있다.
-func output(_ type: OutputType) {
-    print(type.description)
-}
-
-// 다수의 Ouput을 일렬로 출력하는 책임을 가지고 있다.
-func output(types: [OutputType]) {
-    print(types.map { $0.description }.joined(separator: " "))
-}
-
+// 아웃의 처리에 대한 책임을 지니고 있다.
+private func outed(_ progress: GameProgress) -> GameProgress
 ```
-
