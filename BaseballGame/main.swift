@@ -8,4 +8,10 @@
 
 import Foundation
 
-run()
+do {
+    try gameStart()
+} catch {
+    print(error.localizedDescription)
+}
+
+

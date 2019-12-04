@@ -8,14 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		FC182DF72396898E00AA47DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182DF62396898E00AA47DB /* main.swift */; };
-		FC182E0323968A5D00AA47DB /* GameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0223968A5D00AA47DB /* GameInput.swift */; };
 		FC182E0523968A8000AA47DB /* GameProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0423968A8000AA47DB /* GameProcessor.swift */; };
-		FC182E0723968A8A00AA47DB /* GameOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0623968A8A00AA47DB /* GameOutput.swift */; };
 		FC182E0A23968AF800AA47DB /* Hitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0923968AF800AA47DB /* Hitter.swift */; };
 		FC182E0C23968B0500AA47DB /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0B23968B0500AA47DB /* ScoreBoard.swift */; };
 		FC182E0E23968B1C00AA47DB /* GameProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0D23968B1C00AA47DB /* GameProgress.swift */; };
 		FC182E102396915000AA47DB /* HitterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E0F2396915000AA47DB /* HitterState.swift */; };
-		FC182E12239692CC00AA47DB /* GameRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC182E11239692CC00AA47DB /* GameRunner.swift */; };
+		FC3E970323979244006977AA /* GameRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E970223979244006977AA /* GameRunner.swift */; };
+		FC3E970823979896006977AA /* String+newLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E970723979896006977AA /* String+newLine.swift */; };
+		FCD5A4632396A1130051AD1D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A4622396A1130051AD1D /* Team.swift */; };
+		FCD5A4652396A1290051AD1D /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A4642396A1290051AD1D /* Member.swift */; };
+		FCD5A4712396A8500051AD1D /* Array+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A4702396A8500051AD1D /* Array+safe.swift */; };
+		FCD5A47A2396AB840051AD1D /* TeamInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A4792396AB840051AD1D /* TeamInput.swift */; };
+		FCD5A4822396ABA20051AD1D /* TeamOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A4812396ABA20051AD1D /* TeamOutput.swift */; };
+		FCD5A4892396C20F0051AD1D /* DoubleArray+randomNumberWithGivenDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A4882396C20F0051AD1D /* DoubleArray+randomNumberWithGivenDistribution.swift */; };
+		FCD5A48B2396C2890051AD1D /* AttackOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A48A2396C2890051AD1D /* AttackOrder.swift */; };
+		FCD5A48E2396C2F40051AD1D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A48D2396C2F40051AD1D /* Menu.swift */; };
+		FCD5A49223971E5B0051AD1D /* MenuOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A49023971E5B0051AD1D /* MenuOutput.swift */; };
+		FCD5A49323971E5B0051AD1D /* MenuInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A49123971E5B0051AD1D /* MenuInput.swift */; };
+		FCD5A498239787E50051AD1D /* HitterStateOfMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5A497239787E50051AD1D /* HitterStateOfMember.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,14 +43,24 @@
 /* Begin PBXFileReference section */
 		FC182DF32396898E00AA47DB /* BaseballGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaseballGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC182DF62396898E00AA47DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		FC182E0223968A5D00AA47DB /* GameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInput.swift; sourceTree = "<group>"; };
 		FC182E0423968A8000AA47DB /* GameProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessor.swift; sourceTree = "<group>"; };
-		FC182E0623968A8A00AA47DB /* GameOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOutput.swift; sourceTree = "<group>"; };
 		FC182E0923968AF800AA47DB /* Hitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hitter.swift; sourceTree = "<group>"; };
 		FC182E0B23968B0500AA47DB /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		FC182E0D23968B1C00AA47DB /* GameProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgress.swift; sourceTree = "<group>"; };
 		FC182E0F2396915000AA47DB /* HitterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitterState.swift; sourceTree = "<group>"; };
-		FC182E11239692CC00AA47DB /* GameRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRunner.swift; sourceTree = "<group>"; };
+		FC3E970223979244006977AA /* GameRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRunner.swift; sourceTree = "<group>"; };
+		FC3E970723979896006977AA /* String+newLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+newLine.swift"; sourceTree = "<group>"; };
+		FCD5A4622396A1130051AD1D /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		FCD5A4642396A1290051AD1D /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		FCD5A4702396A8500051AD1D /* Array+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Array+safe.swift"; path = "BaseballGame/Extension/Array+safe.swift"; sourceTree = SOURCE_ROOT; };
+		FCD5A4792396AB840051AD1D /* TeamInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamInput.swift; path = TeamInput/TeamInput.swift; sourceTree = "<group>"; };
+		FCD5A4812396ABA20051AD1D /* TeamOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamOutput.swift; path = TeamOutput/TeamOutput.swift; sourceTree = "<group>"; };
+		FCD5A4882396C20F0051AD1D /* DoubleArray+randomNumberWithGivenDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DoubleArray+randomNumberWithGivenDistribution.swift"; path = "BaseballGame/Extension/DoubleArray+randomNumberWithGivenDistribution.swift"; sourceTree = SOURCE_ROOT; };
+		FCD5A48A2396C2890051AD1D /* AttackOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AttackOrder.swift; path = BaseballGame/Core/Model/AttackOrder.swift; sourceTree = SOURCE_ROOT; };
+		FCD5A48D2396C2F40051AD1D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = BaseballGame/Core/Model/Menu.swift; sourceTree = SOURCE_ROOT; };
+		FCD5A49023971E5B0051AD1D /* MenuOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOutput.swift; sourceTree = "<group>"; };
+		FCD5A49123971E5B0051AD1D /* MenuInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuInput.swift; sourceTree = "<group>"; };
+		FCD5A497239787E50051AD1D /* HitterStateOfMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitterStateOfMember.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				FC182DF62396898E00AA47DB /* main.swift */,
+				FCD5A46F2396A8480051AD1D /* Extension */,
 				FC182DFD239689E700AA47DB /* Core */,
 			);
 			path = BaseballGame;
@@ -83,10 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				FC182E0823968AED00AA47DB /* Model */,
-				FC182E11239692CC00AA47DB /* GameRunner.swift */,
-				FC182E0223968A5D00AA47DB /* GameInput.swift */,
+				FCD5A46C2396A2B70051AD1D /* TeamManager */,
+				FCD5A48F23971E360051AD1D /* MenuManager */,
+				FC3E970223979244006977AA /* GameRunner.swift */,
+				FCD5A497239787E50051AD1D /* HitterStateOfMember.swift */,
 				FC182E0423968A8000AA47DB /* GameProcessor.swift */,
-				FC182E0623968A8A00AA47DB /* GameOutput.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -98,8 +120,56 @@
 				FC182E0F2396915000AA47DB /* HitterState.swift */,
 				FC182E0B23968B0500AA47DB /* ScoreBoard.swift */,
 				FC182E0D23968B1C00AA47DB /* GameProgress.swift */,
+				FCD5A48D2396C2F40051AD1D /* Menu.swift */,
+				FCD5A48A2396C2890051AD1D /* AttackOrder.swift */,
+				FCD5A4662396A1FE0051AD1D /* Team */,
+				FCD5A4672396A2010051AD1D /* Member */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FCD5A4662396A1FE0051AD1D /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				FCD5A4622396A1130051AD1D /* Team.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		FCD5A4672396A2010051AD1D /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				FCD5A4642396A1290051AD1D /* Member.swift */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		FCD5A46C2396A2B70051AD1D /* TeamManager */ = {
+			isa = PBXGroup;
+			children = (
+				FCD5A4792396AB840051AD1D /* TeamInput.swift */,
+				FCD5A4812396ABA20051AD1D /* TeamOutput.swift */,
+			);
+			path = TeamManager;
+			sourceTree = "<group>";
+		};
+		FCD5A46F2396A8480051AD1D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FCD5A4702396A8500051AD1D /* Array+safe.swift */,
+				FCD5A4882396C20F0051AD1D /* DoubleArray+randomNumberWithGivenDistribution.swift */,
+				FC3E970723979896006977AA /* String+newLine.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FCD5A48F23971E360051AD1D /* MenuManager */ = {
+			isa = PBXGroup;
+			children = (
+				FCD5A49123971E5B0051AD1D /* MenuInput.swift */,
+				FCD5A49023971E5B0051AD1D /* MenuOutput.swift */,
+			);
+			path = MenuManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,14 +231,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC182E0523968A8000AA47DB /* GameProcessor.swift in Sources */,
-				FC182E12239692CC00AA47DB /* GameRunner.swift in Sources */,
-				FC182E0723968A8A00AA47DB /* GameOutput.swift in Sources */,
 				FC182DF72396898E00AA47DB /* main.swift in Sources */,
+				FC3E970323979244006977AA /* GameRunner.swift in Sources */,
 				FC182E0A23968AF800AA47DB /* Hitter.swift in Sources */,
 				FC182E102396915000AA47DB /* HitterState.swift in Sources */,
+				FCD5A498239787E50051AD1D /* HitterStateOfMember.swift in Sources */,
+				FCD5A4822396ABA20051AD1D /* TeamOutput.swift in Sources */,
+				FCD5A49223971E5B0051AD1D /* MenuOutput.swift in Sources */,
+				FCD5A48B2396C2890051AD1D /* AttackOrder.swift in Sources */,
+				FCD5A4712396A8500051AD1D /* Array+safe.swift in Sources */,
+				FC3E970823979896006977AA /* String+newLine.swift in Sources */,
+				FCD5A49323971E5B0051AD1D /* MenuInput.swift in Sources */,
+				FCD5A47A2396AB840051AD1D /* TeamInput.swift in Sources */,
 				FC182E0E23968B1C00AA47DB /* GameProgress.swift in Sources */,
+				FCD5A48E2396C2F40051AD1D /* Menu.swift in Sources */,
 				FC182E0C23968B0500AA47DB /* ScoreBoard.swift in Sources */,
-				FC182E0323968A5D00AA47DB /* GameInput.swift in Sources */,
+				FCD5A4632396A1130051AD1D /* Team.swift in Sources */,
+				FCD5A4892396C20F0051AD1D /* DoubleArray+randomNumberWithGivenDistribution.swift in Sources */,
+				FCD5A4652396A1290051AD1D /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
