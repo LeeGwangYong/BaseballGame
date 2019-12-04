@@ -9,14 +9,17 @@
 import Foundation
 
 func hitterState(of member: Member) throws -> HitterState {
-    let hitAverage = member.hitAverage
-    let outAverage = 0.1
-    let averages = [hitAverage, strikeAverage(from: hitAverage), ballAverage(from: hitAverage), outAverage]
-    let rawValueOfHitterState = averages.randomNumberWithGivenDistribution()
+    let rawValueOfHitterState = averages(of: member).randomNumberWithGivenDistribution()
     guard let state = HitterState(rawValue: rawValueOfHitterState) else {
         throw HitterStateError.isNoMatchingHitterState
     }
     return state
+}
+
+private func averages(of member: Member) -> [Double] {
+    let hitAverage = member.hitAverage
+    let outAverage = 0.1
+    return [hitAverage, strikeAverage(from: hitAverage), ballAverage(from: hitAverage), outAverage]
 }
 
 private func strikeAverage(from hitAverage: Double) -> Double {
